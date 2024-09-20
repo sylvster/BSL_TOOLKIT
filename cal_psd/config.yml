@@ -1,0 +1,51 @@
+start_day: "2024-09-06T00:00:00"
+end_day: "2024-09-07T00:00:00"
+
+psd_data_length: 60*12 #12mins from start
+min_db: -200
+max_db: -50
+ddb: 1 #1 db increment
+period_smoothing_width_octaves: 1.0
+period_step_octaves: 0.125
+
+period_low: 0.005 #seconds
+period_max: 2000 #seconds
+
+ppsd_length: 60*60*2 #unit is seconds
+
+net: BK
+loc_loop:
+  - "00"
+  - "01"
+com_loop:
+  - HHZ
+  # - HHN
+  # - HHE
+  # - HNZ
+  # - HNN
+  # - HNE
+sta_loop:
+  # - BKS
+  # - BK02
+  # - BK20
+  # - BK61
+  # - BK62
+  # - BK63
+  # - BK64
+  # - BK66
+  # - BK69
+  - BRIB
+
+pngOPT: true
+epsOPT: false
+debugOPT: true
+plotOPT: false
+waveformplotOPT: true
+showEQOPT: false
+transformOPT: true
+savenpzOPT: True
+loopOPT: false
+SISOPT: false
+localdataOPT: false
+
+client: https://service.ncedc.org #normally, put client name only. ex: "SCEDC", "IRIS"

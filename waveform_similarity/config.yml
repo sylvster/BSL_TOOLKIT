@@ -1,0 +1,58 @@
+# Set data center for event search
+client: USGS
+
+st: 2024-06-16T06:29:21
+minmag: 2.9
+localEQOPT: true
+
+plotOPT: false
+
+# Set time window for downloading seismic data
+manualOPT: false # manually define time window
+SISOPT1: false
+SIStestOPT1: false
+SISOPT2: false
+SIStestOPT2: false
+
+pre_tw: 0 # 0s if this is -10, then data from -10s from the origin time
+stw: 120*60 # 120 min from the starting time (oriting_time + pre_tw)
+
+# Set SNCL parameters
+# target data
+sta1: UMUN
+net1: BK
+com1: HH?
+loc1: !!str 00
+# reference data
+sta2: UMUN
+net2: BK
+com2: HN?
+loc2: !!str 00
+
+transformOPT: true
+
+waveformcheckOPT: true
+
+localTrue:
+  # Set time window for waveform similarity
+  Rvel: 4.2 # surface wave velocity (km/s) 
+  tw_pre_tw: -5 # sec before Rwave_arrival
+  tw_trim: 25 # 2000-s window length
+  # Set frequency range for waveform similarity
+  # Set the frequency range (fl and fh) for waveform similarity analysis. This example will use 0.02-
+  # 0.10 Hz band. Also this will be used for pre-filter when we correct the instrument response.
+  # fl2 < fl < fh < fh2
+  fl2: 0.5 # Hz
+  fl: 1.0 # Hz
+  fh: 5.0 # Hz
+  fh2: 6.0 # Hz
+  logOPT: false
+localFalse:
+  Rvel: 4.2
+  tw_pre_tw: -500
+  tw_trim: 2200
+  fl2: 0.01
+  fl: 0.02
+  fh: 0.05
+  fh2: 0.08
+  logOPT: false
