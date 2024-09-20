@@ -1,0 +1,34 @@
+version: A
+
+sta1: BK54
+sta2: BK54
+sta3: BK54
+
+sensor_name: q8
+sensor_type: HH
+
+loc1: !!str 00
+loc2: !!str 00
+loc3: !!str 00
+
+net1: BK
+net2: BK
+net3: BK
+
+resp1: station_BVtest.xml
+resp2: station_BVtest.xml
+resp3: station_BVtest.xml
+
+datapara: !!str 2024.173.000000
+tw_trim: 60*60*1
+data_points: 65536 * 2
+
+datadir: /BSL_TOOLKIT/self_noise #replace with data output directory
+
+# Plot Configurations
+plotOPT: false
+alpha: 0.80
+pngOUTOPT: true
+savesacOPT: false
+waveformplotOPT: false
+nocoeffplotOPT: true
