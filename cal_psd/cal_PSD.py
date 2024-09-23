@@ -94,7 +94,7 @@ print(cmap)
 ppsd_length = eval(config["ppsd_length"])
 print("# ppsd_length = ", ppsd_length)
 
-net = "BK"
+net = config["net"]
 loc_loop = config["loc_loop"]
 com_loop = config["com_loop"]
 sta_loop = config["sta_loop"]
