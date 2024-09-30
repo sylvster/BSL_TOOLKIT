@@ -44,10 +44,8 @@ plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 file_path = os.path.realpath(__file__)
 directory = os.path.dirname(file_path)
 
-with open(f"{directory}/config.yml") as c:
-    config = yaml.safe_load(c)
-
-flags = {"start_day": ("-st", str), "end_day": ("-ed", str), "ppsd_length": ("-psd", str), "net": ("-n", str), "loc_loop": ("-loc", str), "com_loop": ("-com", str), "sta_loop": ("-sta", str),
+flags = {"config": ("-c", str),
+         "start_day": ("-st", str), "end_day": ("-ed", str), "ppsd_length": ("-psd", str), "net": ("-n", str), "loc_loop": ("-loc", str), "com_loop": ("-com", str), "sta_loop": ("-sta", str),
          "pngOPT": ("-png", bool), "epsOPT": ("-eps", bool), "debugOPT": ("-debug", bool), "plotOPT": ("-plot", bool), "waveformplotOPT": ("-waveformplot", bool), "showEQOPT": ("-eq", bool),
          "transformOPT": ("-transform", bool), "savenpzOPT": ("-savenpz", bool), "loopOPT": ("-loop", bool), "SISOPT": ("-sis", bool), "localdataOPT": ("-local", bool)}
 
@@ -60,6 +58,14 @@ for key in flags.keys():
 
 args, unknown = parser.parse_known_args()
 args_dict = args.__dict__
+
+config_name = "cal_PSD.yml"
+
+if args_dict["config"]:
+    config_name = args_dict["config"]
+
+with open(f"{directory}/{config_name}") as c:
+    config = yaml.safe_load(c)
 
 for var in flags.keys():
     if args_dict[var]:

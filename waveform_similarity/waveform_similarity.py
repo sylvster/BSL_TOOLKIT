@@ -40,10 +40,8 @@ print(f"Versions: obspy {ob.__version__}, numpy {np.__version__}, scipy {sp.__ve
 file_path = os.path.realpath(__file__)
 directory = os.path.dirname(file_path)
 
-with open(f"{directory}/config.yml") as c:
-    config = yaml.safe_load(c)
-
-flags = {"sta1": ("-s1", str), "net1": ("-n1", str), "com1": ("-c1", str), "loc1": ("-l1", str), 
+flags = {"config": ("-c", str),
+         "sta1": ("-s1", str), "net1": ("-n1", str), "com1": ("-c1", str), "loc1": ("-l1", str), 
          "sta2": ("-s2", str), "net2": ("-n2", str), "com2": ("-c2", str), "loc2": ("-l2", str), 
          "st": ("-st", str), "minmag": ("-mm", float), "localEQOPT": ("-eq", bool)}
 
@@ -56,6 +54,14 @@ for key in flags.keys():
 
 args, unknown = parser.parse_known_args()
 args_dict = args.__dict__
+
+config_name = "waveform_similarity.yml"
+
+if args_dict["config"]:
+    config_name = args_dict["config"]
+
+with open(f"{directory}/{config_name}") as c:
+    config = yaml.safe_load(c)
 
 for var in flags.keys():
     if args_dict[var]:
