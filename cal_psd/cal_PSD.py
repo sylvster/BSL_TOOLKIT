@@ -45,11 +45,27 @@ file_path = os.path.realpath(__file__)
 directory = os.path.dirname(file_path)
 
 flags = {"config": ("-c", str),
-         "start_day": ("-st", str), "end_day": ("-ed", str), "ppsd_length": ("-psd", str), "net": ("-n", str), "loc_loop": ("-loc", str), "com_loop": ("-com", str), "sta_loop": ("-sta", str),
-         "pngOPT": ("-png", bool), "epsOPT": ("-eps", bool), "debugOPT": ("-debug", bool), "plotOPT": ("-plot", bool), "waveformplotOPT": ("-waveformplot", bool), "showEQOPT": ("-eq", bool),
-         "transformOPT": ("-transform", bool), "savenpzOPT": ("-savenpz", bool), "loopOPT": ("-loop", bool), "SISOPT": ("-sis", bool), "localdataOPT": ("-local", bool)}
+         "start_day": ("-st", str),
+         "end_day": ("-ed", str), 
+         "ppsd_length": ("-psd", str), 
+         "net": ("-n", str), 
+         "loc_loop": ("-loc", str), 
+         "com_loop": ("-com", str), 
+         "sta_loop": ("-sta", str),
+         "pngOPT": ("-png", bool), 
+         "epsOPT": ("-eps", bool), 
+         "debugOPT": ("-debug", bool), 
+         "plotOPT": ("-plot", bool), 
+         "waveformplotOPT": ("-waveformplot", bool), 
+         "showEQOPT": ("-eq", bool),
+         "transformOPT": ("-transform", bool), 
+         "savenpzOPT": ("-savenpz", bool), 
+         "loopOPT": ("-loop", bool), 
+         "SISOPT": ("-sis", bool), 
+         "localdataOPT": ("-local", bool)}
 
-parser = argparse.ArgumentParser(description="Flags for waveform_similarity.py")
+parser = argparse.ArgumentParser(description="Flags for cal_PSD.py. By default, these variables are established in \
+                                 the cal_PSD.yml config file, and the flags serve as overrides for these values.")
 
 for key in flags.keys():
     var = key

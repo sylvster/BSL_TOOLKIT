@@ -41,11 +41,20 @@ file_path = os.path.realpath(__file__)
 directory = os.path.dirname(file_path)
 
 flags = {"config": ("-c", str),
-         "sta1": ("-s1", str), "net1": ("-n1", str), "com1": ("-c1", str), "loc1": ("-l1", str), 
-         "sta2": ("-s2", str), "net2": ("-n2", str), "com2": ("-c2", str), "loc2": ("-l2", str), 
-         "st": ("-st", str), "minmag": ("-mm", float), "localEQOPT": ("-eq", bool)}
+         "sta1": ("-s1", str), 
+         "net1": ("-n1", str), 
+         "com1": ("-c1", str), 
+         "loc1": ("-l1", str), 
+         "sta2": ("-s2", str), 
+         "net2": ("-n2", str), 
+         "com2": ("-c2", str), 
+         "loc2": ("-l2", str), 
+         "st": ("-st", str), 
+         "minmag": ("-mm", float), 
+         "localEQOPT": ("-eq", bool)}
 
-parser = argparse.ArgumentParser(description="Flags for waveform_similarity.py")
+parser = argparse.ArgumentParser(description="Flags for waveform_similarity.py. By default, these variables are established in \
+                                 the waveform_similarity.yml config file, and the flags serve as overrides for these values.")
 
 for key in flags.keys():
     var = key
