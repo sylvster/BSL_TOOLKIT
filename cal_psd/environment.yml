@@ -1,0 +1,9 @@
+name: cal_psd
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - obspy=1.4.1
+  - matplotlib=3.8.4
+  - numpy=1.26.4
+  - pyyaml=6.0.1
