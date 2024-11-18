@@ -8,6 +8,7 @@ from obspy import read, read_inventory
 
 import obspy as ob
 print("# obspy version = ",ob.__version__)
+print("# obspy path", ob.__path__)
 
 from obspy.core.inventory import Inventory, Network, Station, Channel, Site
 from obspy.clients.nrl import NRL
@@ -351,6 +352,7 @@ def cal_PSD(sta, net, com, loc, start_day, end_day, pngOPT, epsOPT, debugOPT, cl
     else:
         if debugOPT:
             print("# ppsd.plot start")
+        print(cmap, period_low, period_max)
         ppsd.plot(cmap=cmap, period_lim=(period_low, period_max), show_mean = True, )
         if debugOPT:
             print("# ppsd.plot end")
