@@ -1,0 +1,42 @@
+net: BK
+sta: YUBA
+cha: BH?
+com: BH?
+loc: !!str 00
+
+Rdir: /home/gcl/TT/sylvesterseo/bsl/BSL_TOOLKIT/DLOPy
+
+nameconv: 1
+
+cat_client: IRIS
+wf_client: NCEDC
+
+time1: "2019-01-01 00:00:00"
+time2: "2023-10-01 00:00:00"
+
+localdata: false    # If using local data
+localcoords: false  # If inputting own station lat and lon
+inputlat: 32.533617
+inputlon: 120.49978
+
+#inputlat = 32.533617
+#
+
+minmag: 6.5  # Minimum magnitude EQ used
+
+mindeg_sw: 5.0     # Minimum event degree distance for surface waves
+maxdeg_sw: 175.0   # Maximum event degree distance for surface waves
+maxdep_sw: 150.0   # Maximum event depth (km) for surface waves
+
+# How much information to output while the program is running
+# 0 - outputs nothing
+# 1 - outputs current event being analyzed out of total (e.g. 4 / 79)
+# 2 - outputs event number and one result (R1-30)
+verb: 2
+
+constsave: true # Save results along the way?
+
+finplot: true # Plot results at the end?
+
+savecat: true # Save event catalog?
+
